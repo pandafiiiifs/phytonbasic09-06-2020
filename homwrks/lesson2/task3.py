@@ -18,3 +18,26 @@ while True:
 for key in seasons_dict.keys():
     if user_answer in seasons_dict[key]:
         print(key)
+
+
+#вариант с решением через List
+
+seasons_dict2 = ['зима', 'весна', 'лето', 'осень']
+while True:
+    user_answer2 = input('введите число месяца')
+    if user_answer2.isdigit():
+        user_answer2 = int(user_answer2)
+        break
+    print('Вы ввели не число')
+
+if user_answer2 == 12 or user_answer2 == 1 or user_answer2 == 2:
+    print(seasons_dict2[0])
+elif user_answer2 == 3 or user_answer2 == 4 or user_answer2 == 5:
+    print(seasons_dict2[1])
+elif user_answer2 == 6 or user_answer2 == 7 or user_answer2 == 8:
+    print(seasons_dict2[2])
+elif user_answer2 == 9 or user_answer2 == 10 or user_answer2 == 11:
+    print(seasons_dict2[3])
+
+
+
