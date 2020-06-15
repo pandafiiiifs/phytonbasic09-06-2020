@@ -3,3 +3,21 @@
 # Для заполнения списка элементов необходимо использовать функцию input().
 
 user_input = int(input('введите количество списка'))
+my_list = []
+i = 0
+e = 0
+
+
+while i < user_input:
+    my_list.append(input('введите следующий элемент списка'))
+    i = i + 1
+    #print (my_list)
+
+for elem in range(int(len(my_list)/2)):
+    my_list[e], my_list[e + 1] = my_list[e + 1], my_list[e]
+    e = e + 2
+
+print(my_list)
+
+
+
