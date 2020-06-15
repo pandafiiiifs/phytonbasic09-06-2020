@@ -7,15 +7,19 @@
 #Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 #Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
 
-el_count = int(input("Введите количество элементов списка "))
-my_list = []
-i = 0
-el = 0
-while i < el_count:
-    my_list.append(input("Введите следующее значение списка "))
-    i += 1
-
-for elem in range(int(len(my_list)/2)):
-        my_list[el], my_list[el + 1] = my_list [el + 1], my_list[el]
-        el += 2
-print(my_list)
+my_list = [7, 5, 3, 3, 2]
+print(f'Посмотрите на список   {my_list}')
+user_answer = int(input('введите число\nчтобы прервать цикл, введите 4242'))
+while user_answer != 4242:
+    for i in range(len(my_list)):
+        if my_list[i] == user_answer:
+            my_list.insert(i + 1, user_answer)
+            break
+        elif my_list[0] < user_answer:
+            my_list.insert(0, user_answer)
+        elif my_list[-1] > user_answer:
+            my_list.append(user_answer)
+        elif my_list[i] > user_answer and my_list[i + 1] < user_answer:
+            my_list.insert(i + 1, user_answer)
+    print(f'новый список - {my_list}')
+    user_answer = int(input('введите число'))
