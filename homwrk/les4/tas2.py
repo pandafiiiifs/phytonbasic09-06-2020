@@ -7,3 +7,15 @@
 
 
 
+from random import randint
+
+nums = [randint(10, 20) for i in range(20)]
+print(nums)
+i=0
+nums2=[]
+for el in nums:
+    if el > nums[i-1]:
+        nums2.append(el)
+    i+=1
+
+print(nums2)
