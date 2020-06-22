@@ -8,15 +8,12 @@
 
 """задание а"""
 from random import randrange
-import itertools
-x = int(input('с какого значения начинать генератор?'))
+from itertools import count
 
-for i in itertools.count(x):
-    if i > 10:
-        break
+for el in count(int(input('Введите стартовое число '))):
+    if el < 15:
+        #print(randrange(el))#случайные числа
+        print(el)
+
     else:
-        print(randrange(i))
-
-
-
-
+        break
