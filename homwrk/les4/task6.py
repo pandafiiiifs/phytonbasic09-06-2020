@@ -7,17 +7,16 @@
 # Во втором также необходимо предусмотреть условие, при котором повторение элементов списка будет прекращено.
 
 """задание а"""
-from random import randint
+from random import randrange
+import itertools
+x = int(input('с какого значения начинать генератор?'))
+
+for i in itertools.count(x):
+    if i > 10:
+        break
+    else:
+        print(randrange(i))
 
 
-def gen_nums(x, y , z):
-    gen_nums = [randint(x, y) for i in range(z)]
-    return gen_nums
 
 
-
-import task6
-x = int(input('от какого числа начинать генерацию?'))
-y = int(input('каким числом закончить?'))
-z = int(input('сколько чисел генерировать?'))
-print(task6.gen_nums(x, y ,z))
