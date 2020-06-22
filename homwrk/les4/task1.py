@@ -2,11 +2,12 @@
 # В расчете необходимо использовать формулу: (выработка в часах * ставка в час) + премия.
 # Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
 
-from sys import argv
 
-script_name, first_param, second_param, third_param = argv
+def work_calc():
+    hours_work = int(input('Введите количество отработанных часов: '))
+    rate = int(input('Введите ставку в час: '))
+    award = int(input('Введите размер премии: '))
+    return hours_work * rate + award
 
-print("Имя скрипта: ", script_name)
-print("Параметр 1: ", first_param)
-print("Параметр 2: ", second_param)
-print("Параметр 3: ", third_param)
+import task1
+print(task1.work_calc())
