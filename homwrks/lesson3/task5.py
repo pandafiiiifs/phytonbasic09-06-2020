@@ -7,22 +7,22 @@
 # то вначале нужно добавить сумму этих чисел к полученной ранее сумме и после этого завершить программу.
 
 
-sum = 0
+def my_sum ():
+    sum_res = 0
+    ex = False
+    while ex == False:
+        number = input('Введите числа, если хотите выйти, введите\n  spam  - ').split()
+
+        res = 0
+        for el in range(len(number)):
+            if number[el] == 'spam':
+                ex = True
+                break
+            else:
+                res = res + int(number[el])
+        sum_res = sum_res + res
+        print(f'текущая сумма {sum_res}')
+    print(f'Финальная сумма {sum_res}')
 
 
-while True:
-    a = list(input('Введите числа: если вы хотите покинуть программу\n введите # ').split())
-    if a == ['#']:
-        break
-    else:
-        line = [int(item) for item in a]
-        for arg in line:
-            sum += int(arg)
-            print(f'Current sum is {sum}')
-            continue
-
-
-
-
-
-
+my_sum()
