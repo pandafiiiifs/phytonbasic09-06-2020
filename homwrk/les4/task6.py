@@ -9,11 +9,12 @@
 """задание а"""
 from random import randrange
 from itertools import count
+import task6
 
 for el in count(int(input('Введите стартовое число '))):
     if el < 15:
-        #print(randrange(el))#случайные числа
-        print(el)
+    #print(randrange(el))#случайные числа
+        print(task6.el)
 
     else:
         break
@@ -25,4 +26,3 @@ from itertools import cycle
 my_list = ['eggs', 'spam', 42, False]
 for el in cycle(my_list):
   print(el)
-    
