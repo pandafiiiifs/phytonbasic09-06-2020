@@ -17,3 +17,12 @@ for el in count(int(input('Введите стартовое число '))):
 
     else:
         break
+
+
+
+#задание b
+from itertools import cycle
+my_list = ['eggs', 'spam', 42, False]
+for el in cycle(my_list):
+  print(el)
+    
