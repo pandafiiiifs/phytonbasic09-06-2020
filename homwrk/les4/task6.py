@@ -10,11 +10,11 @@
 from random import randrange
 from itertools import count
 import task6
-
-for el in count(int(input('Введите стартовое число '))):
-    if el < 15:
+user_answer = int(input('до какого числа вывести список?\n'))
+for el in count(int(input('Введите стартовое число\n '))):
+    if el <= user_answer:
     #print(randrange(el))#случайные числа
-        print(task6.el)
+        print(task6.el, end=',')
 
     else:
         break
@@ -23,6 +23,17 @@ for el in count(int(input('Введите стартовое число '))):
 
 #задание b
 from itertools import cycle
+user_answer2 = int(input('\nСколько раз вывести цикл?\n'))
 my_list = ['eggs', 'spam', 42, False]
+i = 0
 for el in cycle(my_list):
-  print(el)
+    if i >= user_answer2:
+        break
+
+    print(task6.el, end=',')
+    i += 1
+
+
+
+
+
