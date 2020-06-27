@@ -11,7 +11,7 @@ class TrafficLight:
     _color_y = 'желтый'
     _color_g = 'зеленый'
 
-    #методы класса
+    #методы класс
     def time(self):
         TrafficLight.time_r = 7
         print(f'светофор переключается\n в {TrafficLight._color_r} \nосталось {TrafficLight.time_r} секунд ')
