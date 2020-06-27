@@ -7,15 +7,17 @@
 
 
 class Road:
-    _lenght = int(input('введите длину'))
-    _widht = int(input('введите ширину'))
-    def ground(self):
-        Road.weight = int(input('введите массу'))
-        Road.thin = int(input('введите толщину'))
-        Road.result = Road._lenght* Road._widht * Road.weight * Road.thin
-        return (Road.result)
+    def __init__(self, length, width):
+        self._length = length
+        self._width = width
+        print(f'Данные приняты. Длина равна: {self._length}, ширина равна: {self._width}')
+
+    def calculation(self):
+        weight = int(input('введите массу'))
+        thick = int(input('введите толщину'))
+        return print(f'Масса асфальта равна: {self._width * self._length * weight * thick}')
 
 
-a = Road()
-print(a.ground())
+my_road = Road(20, 5000)
 
+my_road.calculation()
