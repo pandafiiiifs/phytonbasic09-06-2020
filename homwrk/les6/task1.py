@@ -7,17 +7,17 @@
 import time
 class TrafficLight:
     #атрибуты класса
-    _color_r = 'красный'
-    _color_y = 'желтый'
-    _color_g = 'зеленый'
+    __color_r = 'красный'
+    __color_y = 'желтый'
+    __color_g = 'зеленый'
 
     #методы класс
     def time(self):
-        print(f'светофор переключается\n в {TrafficLight._color_r} ')
+        print(f'светофор переключается\n в {TrafficLight.__color_r} ')
         time.sleep(7)
-        print(f'светофор переключается\n в {TrafficLight._color_y} ')
+        print(f'светофор переключается\n в {TrafficLight.__color_y} ')
         time.sleep(2)
-        print(f'светофор переключается\n в {TrafficLight._color_g}  ')
+        print(f'светофор переключается\n в {TrafficLight.__color_g}  ')
         time.sleep(5)
 
 
