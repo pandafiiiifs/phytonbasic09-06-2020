@@ -23,6 +23,7 @@ class Clothes:
     def _calc(self):
         pass
 
+
     def __add__(self, other):
         self.other = self._size + other._size
         return f'Общий расход ткани {self.other}'

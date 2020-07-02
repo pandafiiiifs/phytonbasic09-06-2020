@@ -15,3 +15,41 @@
 #Например, количество ячеек клетки равняется 12, количество ячеек в ряду — 5. Тогда метод make_order() вернет строку: *****\n*****\n**.
 #Или, количество ячеек клетки равняется 15, количество ячеек в ряду — 5. Тогда метод make_order() вернет строку: *****\n*****\n*****.
 #Подсказка: подробный список операторов для перегрузки доступен по ссылке.
+
+
+class Cell:
+    def __init__(self, cell_num):
+        self.cell_num = cell_num
+
+    def __add__(self, other):
+        self.other = self.cell_num + other.cell_num
+        return f'сумма клеток {self.other}'
+
+    def __sub__(self, other):
+        self.other = self.cell_num - other.cell_num
+        if self.cell_num > other.cell_num:
+            return f'разница клеток {self.other}'
+        else:
+            return f'отрицательное значение нельзя'
+
+    def __mul__(self, other):
+        self.other = self.cell_num * other.cell_num
+        return f'умножение клеток {self.other}'
+
+    def __truediv__(self, other):
+        try:
+            self.other = self.cell_num // other.cell_num
+            return f'деление клеток {self.other}'
+        except ZeroDivisionError:
+            return f'на ноль нельзя делить'
+
+
+
+a = Cell(1)
+b = Cell(10)
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+
+
