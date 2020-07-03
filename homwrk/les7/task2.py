@@ -8,18 +8,21 @@
 #Реализовать общий подсчет расхода ткани.
 # Проверить на практике полученные на этом уроке знания:
 # реализовать абстрактные классы для основных классов проекта, проверить на практике работу декоратора @property.
+from abc import ABC, abstractmethod
 
-class Clothes:
+
+class Clothes(ABC):
     def __init__(self,name,size):
         self._name = name
         self._size = size
         self._area = None
-
+    @property
     def get_area(self):
         if self._area is None:
             self._calc()
         return self._area
 
+    @abstractmethod
     def _calc(self):
         pass
 
@@ -49,11 +52,11 @@ class Costume(Clothes):
 
 
 a = Coat('пальто',52)
-print(a.get_area())
+a.get_area
 print(a)
 
 b = Costume('армани', 190)
-print(b.get_area())
+b.get_area
 print(b)
 print(a+b)
 
