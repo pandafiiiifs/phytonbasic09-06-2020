@@ -48,9 +48,9 @@ class Cell:
 a = Cell(1)
 b = Cell(10)
 c = Cell(2)
-print(d=Cell(a+b+c))
-#print(a-b)
-#print(a*b)
-#print(a/b)
+print((a+b)
+print(a-b)
+print(a*b)
+print(a/b)
 
 
