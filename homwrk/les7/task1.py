@@ -12,24 +12,39 @@ import numpy as np
 
 
 class Matrix:
-    def __init__(self,eye):
-        self.eye = eye
+    def __init__(self, matr_1, matr_2):
+        self.matr_1= matr_1
+        self.matr_2 = matr_2
 
-    def __add__(self, other):
-        return Matrix([[self.eye[i][j] + other.eye[i][j]for j in range(len(self.eye[0]))]for i in range(len(other.eye))])
+    def __add__(self):
+        matr = [[0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]]
+
+        for i in range(len(self.matr_1)):
+
+            for j in range(len(self.matr_2[i])):
+                matr[i][j] = self.matr_1[i][j] + self.matr_2[i][j]
+
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in matr]))
+
+
+    def __str__(self):
+        matr = (self.matr_1,self.matr_2)
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in matr]))
 
 
 
 
 
+my_matrix = Matrix([[0, 1, 20],
+                    [8, 7, 2],
+                    [52, 42, 1]],
+                   [[85, 5, 1],
+                    [25, 77, 99],
+                    [54, 22, 85]])
 
 
+print(my_matrix)
+#print(my_matrix.__add__())
 
-a = Matrix([[31, 22],
-            [37, 43]])
-print(a)
-b = Matrix([[3, 5],[32, 2, 5]])
-
-print(b)
-c = a+b
-print(c)
