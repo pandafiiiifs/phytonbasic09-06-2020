@@ -12,26 +12,23 @@ import numpy as np
 
 
 class Matrix:
-    def __init__(self, matr_1, matr_2):
+    def __init__(self, matr_1):
         self.matr_1= matr_1
-        self.matr_2 = matr_2
 
-    def __add__(self):
-        matr = [[0, 0, 0],
-                [0, 0, 0],
-                [0, 0, 0]]
+    def matr_print(self , i , j):
+        print(self.matr_1[i][j])
 
-        for i in range(len(self.matr_1)):
 
-            for j in range(len(self.matr_2[i])):
-                matr[i][j] = self.matr_1[i][j] + self.matr_2[i][j]
+    def __add__(self, other):
+        return Matrix([([self.matr_1[i][j] + other.matr_1[i][j] for j in range(len(self.matr_1[0]))])
+                     for i in range(len(other.matr_1))])
 
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in matr]))
+
+
 
 
     def __str__(self):
-        matr = (self.matr_1,self.matr_2)
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in matr]))
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in self.matr_1]))
 
 
 
@@ -39,12 +36,14 @@ class Matrix:
 
 my_matrix = Matrix([[0, 1, 20],
                     [8, 7, 2],
-                    [52, 42, 1]],
-                   [[85, 5, 1],
+                    [52, 42, 1]])
+my_matrix_2 = Matrix([[85, 5, 1],
                     [25, 77, 99],
                     [54, 22, 85]])
 
-
+sum = my_matrix + my_matrix_2
 print(my_matrix)
+print(my_matrix_2)
+print(sum)
 #print(my_matrix.__add__())
 
